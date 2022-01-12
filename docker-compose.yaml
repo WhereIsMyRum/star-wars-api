@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  star-wars-serverless-api:
+    container_name: star-wars-serverless-api
+    build:
+      context: .
+      target: dev
+      dockerfile: docker/Dockerfile
+    command: 'node_modules/serverless/bin/serverless offline --host 0.0.0.0'
+    ports:
+      - '3002:3000'
+    volumes:
+      - /home/node/start-wars-serverless-api/node_modules
+      - ./src:/home/node/star-wars-serverless-api/src
+      - ./dist:/home/node/star-wars-serverless-api/dist
+
+  mongo:
+    container_name: mongo
+    image: mongo:5.0-focal
+    ports:
+      - '27017:27017'

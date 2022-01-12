@@ -1,0 +1,25 @@
+service: star-wars-serverless-api
+
+frameworkVersion: '2'
+
+useDotenv: true
+
+plugins:
+  - serverless-plugin-optimize
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  apiGateway:
+    shouldStartNameWithService: true
+  environment:
+    NODE_ENV: ${env:NODE_ENV}
+functions:
+  app:
+    handler: dist/serverless.handler
+    events:
+      - http:
+          method: any
+          path: /{any+}
+

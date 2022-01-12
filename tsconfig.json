@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "strict": true,
+    "paths": {
+      "@star-wars-serverless-api/character": ["src/character"],
+      "@star-wars-serverless-api/character/application": [
+        "src/character/application"
+      ],
+      "@star-wars-serverless-api/character/domain": ["src/character/domain"],
+      "@star-wars-serverless-api/character/infrastructure": [
+        "src/character/infrastructure"
+      ],
+      "@star-wars-serverless-api/common": ["src/common"],
+      "@star-wars-serverless-api/tests": ["src/tests"]
+    }
+  }
+}

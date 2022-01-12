@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@star-wars-serverless-api/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
